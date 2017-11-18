@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MaskBehavior"
+             x:Class="MaskBehavior.MainPage"
+             xmlns:helper="clr-namespace:MaskBehavior.Helpers"
+             Title="Máscaras">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="50">
+            <Label Text="Aplicando máscaras com Behaviors"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="(Ao atingir o tamanho especificado a máscara é aplicada)"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,10"/>
+            <Entry Placeholder="DD/MM/YYYY"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry MaxLength="10" Tipo="Data"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="MM/YYYY"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry MaxLength="7" Tipo="DataValidadeCartaoCredito"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="000.000.000-00"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry MaxLength="14" Tipo="Cpf"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="00.000.000/0000-00"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry MaxLength="18" Tipo="Cnpj"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="(99) 99999-9999"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry MaxLength="15" Tipo="Telefone"/>
+                </Entry.Behaviors>
+            </Entry>
+            <Entry Placeholder="0,00"
+                   Keyboard="Numeric"
+                   HorizontalTextAlignment="Center">
+                <Entry.Behaviors>
+                    <helper:MaskBehaviorEntry Tipo="Decimal"/>
+                </Entry.Behaviors>
+            </Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
